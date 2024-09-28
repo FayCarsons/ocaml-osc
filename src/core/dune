@@ -1,7 +1,7 @@
 (library
-  (name osc)
-  (public_name osc)
-  (wrapped false)
-  (modules codec osc transport osc_types)
-  (private_modules codec transport osc_types)
-  (libraries ocplib-endian))
+ (name osc)
+ (public_name osc)
+ (wrapped false)
+ (modules codec osc transport osc_types)
+ (private_modules codec transport osc_types)
+ (libraries ocplib-endian))

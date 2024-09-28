@@ -1,5 +1,4 @@
 (test
-  (name test_unix)
-  (modules test_unix)
-  (libraries osc-unix test_common threads))
-
+ (name test_unix)
+ (modules test_unix)
+ (libraries osc.unix test_common threads))
