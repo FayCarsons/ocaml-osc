@@ -1,0 +1,5 @@
+- Add TCP
+- Add ability to wait for reply? is that a thing in OSC? its just a protocol ig
+  - there's a receiver responder pattern used in OSC that could be implemented
+- Refactor tests, idk what's goin on in there. Maybe inline tests?
+- Prolly other stuff

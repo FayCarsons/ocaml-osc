@@ -1,4 +1,0 @@
-(test
-  (name test_string)
-  (modules test_string)
-  (libraries osc test_common))
