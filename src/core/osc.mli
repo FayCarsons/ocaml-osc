@@ -1,5 +1,11 @@
 (** IO-independent code for handling OSC packets and bundles. *)
 
+module Common : sig
+  type typetag_error =
+    | Unsupported_typetag of char
+    | Missing_typetag_string
+end
+
 module Types : sig
   (** Types representing OSC packets. *)
 
@@ -52,9 +58,7 @@ module Codec : sig
   val of_packet : Types.packet -> string
 
   (** Attempt to deserialise a string into an OSC packet. *)
-  val to_packet
-    :  string
-    -> (Types.packet, [ `Missing_typetag_string | `Unsupported_typetag of char ]) Result.t
+  val to_packet : string -> (Types.packet, Common.typetag_error) Result.t
 end
 
 module Transport : sig
@@ -146,12 +150,7 @@ module Transport : sig
 
       (** Retrieve a packet sent to the server, as well as the sending client's
           address. *)
-      val recv
-        :  t
-        -> ( Types.packet * T.sockaddr
-             , [ `Missing_typetag_string | `Unsupported_typetag of char ] )
-             Result.t
-             T.IO.t
+      val recv : t -> (Types.packet * T.sockaddr, Common.typetag_error) Result.t T.IO.t
     end
   end
 end

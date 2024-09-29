@@ -1,3 +1,7 @@
+module Common = struct
+  include Common
+end
+
 module Types = struct
   include Osc_types
 end

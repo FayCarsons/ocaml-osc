@@ -1,3 +1,5 @@
+include Osc.Common
+
 module IO = struct
   type 'a t = 'a
 
